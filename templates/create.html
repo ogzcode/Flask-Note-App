@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block style %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/create.css') }}" />
+{% endblock %}
+
+{% block content %}
+<main>
+    <form class="create__form">
+        <h1>Create Note</h1>
+        <label for="title">Note Title</label>
+        <input type="text" value="" placeholder="Enter title a note..." />
+        <br>
+        <label for="content">Note</label>
+        <textarea placeholder="Enter your note..."></textarea>
+        <br>
+        <button class="save__btn">Save</button>
+    </form>
+</main>
+{% endblock %}
