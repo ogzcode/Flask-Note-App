@@ -1,0 +1,66 @@
+main {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.create__form {
+    min-width: 560px;
+    min-height: 400px;
+    background-color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, .1);
+}
+
+.create__form h1 {
+    color: slategray;
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+}
+
+label {
+    display: block;
+    font-size: 16px;
+    margin-bottom: .5rem;
+    color: slategray;
+    text-align: left;
+}
+
+input {
+    width: 100%;
+    border: 1px solid slategray;
+    border-radius: 4px;
+    outline: none;
+    font-size: 14px;
+    padding: .5rem;
+    margin-bottom: 2rem;
+}
+
+textarea {
+    width: 100%;
+    height: 200px;
+    outline: none;
+    border: 1px solid slategray;
+    border-radius: 4px;
+    padding: .5rem;
+    margin-bottom: 2rem;
+    font-size: 14px;
+}
+
+.save__btn {
+    padding: .5rem 2rem;
+    background-color: slategray;
+    font-size: 16px;
+    border-radius: 4px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    transition: .1s;
+}
+
+.save__btn:hover {
+    transform: scale(.95);
+}

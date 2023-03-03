@@ -1,0 +1,100 @@
+body {
+    position: relative;
+}
+
+main {
+    padding: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.note {
+    width: 400px;
+    min-height: 160px;
+    margin: 1rem ;
+    padding: 1rem;
+    border-radius: 4px;
+}
+
+.note h2 {
+    color: white;
+}
+
+.note small {
+    color: white;
+    font-style: italic;
+}
+
+.note__content {
+    margin: 1rem 0;
+    color: white;
+    text-overflow: ellipsis;
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.note__footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.note__footer * {
+    color: white;
+    border: 1px solid white;
+    border-radius: 2px;
+    cursor: pointer;
+    padding: .25rem 2rem;
+    font-size: 16px;
+}
+
+.note__footer a {
+    text-decoration: none;
+}
+
+.note__footer button {
+    background-color: transparent;
+}
+
+
+.toast__form {
+    display: none;
+}
+
+.read__content {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    min-width: 100vw;
+    min-height: 100%;
+    background-color: rgba(0, 0, 0, .4);
+    top: 0;
+    left: 0;
+    position: absolute;
+    transition: all .2s;
+}
+
+.read__inner {
+    width: 400px;
+    background-color: white;
+    position: relative;
+    padding: 3rem;
+    border-radius: 4px;
+}
+
+.close__note {
+    position: absolute;
+    top: .5rem;
+    right: .5rem;
+    font-size: 18px;
+    width: 28px;
+    height: 28px;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    z-index: 5;
+}
