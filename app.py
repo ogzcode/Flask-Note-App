@@ -1,61 +1,20 @@
-from flask import Flask,render_template
+from flask import Flask, render_template
+import sqlite3
 
 app = Flask(__name__)
 
-notes = [
-    {
-        "id": 1,
-        "title": "Do Home Work",
-        "content": """Lorem ipsum dolor, sit amet consectetur adipisicing elit.Esse sapiente ullam consectetur placeat ex amet maxime non accusamus saepe eaque""",
-        "date": "01.03.2023"
-    },
-    {
-        "id": 2,
-        "title": "Do Home Work",
-        "content": """Lorem ipsum dolor, sit amet consectetur adipisicing elit.Esse sapiente ullam consectetur placeat ex amet maxime non accusamus saepe eaque""",
-        "date": "01.03.2023"
-    },
-    {
-        "id": 3,
-        "title": "Do Home Work",
-        "content": """Lorem ipsum dolor, sit amet consectetur adipisicing elit.Esse sapiente ullam consectetur placeat ex amet maxime non accusamus saepe eaque""",
-        "date": "01.03.2023"
-    },
-    {
-        "id": 4,
-        "title": "Do Home Work",
-        "content": """Lorem ipsum dolor, sit amet consectetur adipisicing elit.Esse sapiente ullam consectetur placeat ex amet maxime non accusamus saepe eaque""",
-        "date": "01.03.2023"
-    },
-    {
-        "id": 5,
-        "title": "Do Home Work",
-        "content": """Lorem ipsum dolor, sit amet consectetur adipisicing elit.Esse sapiente ullam consectetur placeat ex amet maxime non accusamus saepe eaque""",
-        "date": "01.03.2023"
-    },
-    {
-        "id": 6,
-        "title": "Do Home Work",
-        "content": """Lorem ipsum dolor, sit amet consectetur adipisicing elit.Esse sapiente ullam consectetur placeat ex amet maxime non accusamus saepe eaque""",
-        "date": "01.03.2023"
-    },
-    {
-        "id": 7,
-        "title": "Do Home Work",
-        "content": """Lorem ipsum dolor, sit amet consectetur adipisicing elit.Esse sapiente ullam consectetur placeat ex amet maxime non accusamus saepe eaque""",
-        "date": "01.03.2023"
-    },
-    {
-        "id": 8,
-        "title": "Do Home Work",
-        "content": """Lorem ipsum dolor, sit amet consectetur adipisicing elit.Esse sapiente ullam consectetur placeat ex amet maxime non accusamus saepe eaque""",
-        "date": "01.03.2023"
-    }
-]
+def get_db_connection():
+    conn = sqlite3.connect("database.db")
+    conn.row_factory = sqlite3.Row
+    return conn
 
 @app.route('/')
 def main():
+    conn= get_db_connection()
+    notes = conn.execute("SELECT * FROM notes").fetchall()
+    conn.close()
     return render_template("home.html", notes=notes)
+
 
 @app.route('/create')
 def create():
