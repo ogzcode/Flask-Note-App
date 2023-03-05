@@ -16,9 +16,8 @@ for (let note of notes){
 //Random background-color for note
 
 //Read note
-let readContentList = document.querySelectorAll(".read__content");
-
-function showContent(type, index){
+function showContent(element, type, index){
+    let readContentList = document.querySelectorAll(element);
     let read = readContentList[index - 1];
     if (type === "show"){
         read.style.display = "flex";
