@@ -1,0 +1,12 @@
+<div class="toast__box">
+    <form class="toast__form" action="{{ url_for('delete', id=note['id']) }}" method="POST">
+        <p>Do you want to delete this note ?</p>
+        <div class="form__footer">
+            <button class="form__btn yes--btn" type="submit">Yes</button>
+            <button class="form__btn no--btn" onclick="showContent('.toast__box', 'hide', {{ loop.index }})"
+                type="button">
+                No
+            </button>
+        </div>
+    </form>
+</div>
