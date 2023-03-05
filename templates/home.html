@@ -13,20 +13,12 @@
         <p class="note__content" id="content">{{note['content']}}</p>
         <div class="note__footer">
             <a href="#">Edit</a>
-            <button id="read" onclick="showContent('show', {{ loop.index }})">Read</button>
-            <button id="delete">Delete</button>
+            <button id="read" onclick="showContent('.read__content', 'show', {{ loop.index }})">Read</button>
+            <button onclick="showContent('.toast__box', 'show', {{ loop.index }})">Delete</button>
         </div>
-        <form class="toast__form">
-            <p>Do you want to delete this note ?</p>
-            <button class="form__btn yes--btn" type="submit">Yes</button>
-            <button class="form__btn no--btn" id="no-btn">No</button>
-        </form>
-        <div class="read__content">
-            <div class="read__inner">
-                <p>{{note['content']}}</p>
-                <button class="close__note" onclick="showContent('hide', {{ loop.index }})">X</button>
-            </div>
-        </div>
+        
+        {% include "components/delete_form.html" %}
+        {% include "components/read_content.html" %}
     </div>
     {% endfor %}
 </main>

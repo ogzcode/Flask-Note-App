@@ -6,15 +6,33 @@
 
 {% block content %}
 <main>
-    <form class="create__form">
+    <div class="alert__box">
+        {% for message in get_flashed_messages() %}
+        <p class="alert">{{ message }}</p>
+        {% endfor %}
+    </div>
+    <form class="create__form" method="POST">
         <h1>Create Note</h1>
         <label for="title">Note Title</label>
-        <input type="text" value="" placeholder="Enter title a note..." />
+        <input type="text" name="title" placeholder="Enter title a note..." />
         <br>
         <label for="content">Note</label>
-        <textarea placeholder="Enter your note..."></textarea>
+        <textarea name="content" placeholder="Enter your note..."></textarea>
         <br>
-        <button class="save__btn">Save</button>
+        <button class="save__btn" type="submit">Save</button>
     </form>
 </main>
+{% endblock %}
+
+{% block script %}
+<script>
+    let alert = document.querySelector(".alert");
+    let alertBox = document.querySelector(".alert__box");
+
+    if (alert) {
+        setTimeout(() => {
+            alertBox.removeChild(alert);
+        }, 2000);
+    }
+</script>
 {% endblock %}
