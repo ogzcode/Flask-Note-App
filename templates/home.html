@@ -12,7 +12,7 @@
         <small>{{note['dates']}}</small>
         <p class="note__content" id="content">{{note['content']}}</p>
         <div class="note__footer">
-            <a href="#">Edit</a>
+            <a href="{{ url_for('edit', id=note['id']) }}">Edit</a>
             <button id="read" onclick="showContent('.read__content', 'show', {{ loop.index }})">Read</button>
             <button onclick="showContent('.toast__box', 'show', {{ loop.index }})">Delete</button>
         </div>

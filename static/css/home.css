@@ -74,9 +74,10 @@ main {
 
 .read__inner {
     width: 400px;
+    min-height: 120px;
     background-color: white;
     position: relative;
-    padding: 3rem;
+    padding: 2rem;
     border-radius: 4px;
 }
 
@@ -116,7 +117,7 @@ main {
 .toast__box p {
     font-size: 20px;
     font-weight: 600;
-    color: red;
+    color: slategray;
 }
 
 .form__footer {
@@ -125,15 +126,16 @@ main {
 }
 
 .form__btn {
-    padding: .5rem 2.5rem;
+    padding: .25rem 2.5rem;
     border: none;
     border-radius: 4px;
     margin: 0 .5rem;
     cursor: pointer;
+    font-size: 14px;
 }
 
 .yes--btn {
-    background-color: red;
+    background-color: rgb(253, 108, 108);
     color: white;
 }
 
